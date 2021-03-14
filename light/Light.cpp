@@ -81,19 +81,24 @@ static void handleNotification(const LightState& state) {
      */
     if (alpha != 0xFF)
         brightness = (brightness * alpha) / 0xFF;
-    
+
     /* Disable blinking. */
     set(CHARGING_LED BREATH, 0);
 
-    if (state.flashMode == Flash::TIMED) {
-        /* Set LED */
-        set(CHARGING_LED DELAY_OFF, state.flashOffMs);
-        set(CHARGING_LED DELAY_ON, state.flashOnMs);
-
-        /* Enable blinking. */
-        set(CHARGING_LED BREATH, 1);
-    } else {
-        set(CHARGING_LED BRIGHTNESS, brightness);
+    switch(state.flashMode) {
+        case Flash::HARDWARE:
+            set(CHARGING_LED BREATH, 1);
+            break;
+        case Flash::TIMED:
+            /* Blinking */
+            set(CHARGING_LED DELAY_OFF, state.flashOnMs);
+            set(CHARGING_LED DELAY_ON, state.flashOffMs);
+            break;
+        case Flash::NONE:
+            break;
+        default:
+            set(CHARGING_LED BRIGHTNESS, brightness);
+            break;
     }
 }
 
