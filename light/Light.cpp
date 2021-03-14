@@ -34,6 +34,7 @@ namespace implementation {
 #define CHARGING_LED    LEDS "charging/"
 
 #define BRIGHTNESS      "brightness"
+#define BREATH_RATE     "breath_rate_ms"
 #define BREATH          "breath"
 #define DELAY_OFF       "delay_off"
 #define DELAY_ON        "delay_on"
@@ -87,18 +88,22 @@ static void handleNotification(const LightState& state) {
 
     switch(state.flashMode) {
         case Flash::HARDWARE:
+            set(CHARGING_LED BREATH_RATE, 2000);
             set(CHARGING_LED BREATH, 1);
-            break;
+        break;
         case Flash::TIMED:
             /* Blinking */
-            set(CHARGING_LED DELAY_OFF, state.flashOnMs);
-            set(CHARGING_LED DELAY_ON, state.flashOffMs);
-            break;
+            //set(CHARGING_LED DELAY_OFF, state.flashOnMs);
+            //set(CHARGING_LED DELAY_ON, state.flashOffMs);
+            /* Set breath for now, users like it more */
+            set(CHARGING_LED BREATH_RATE, 2000);
+            set(CHARGING_LED BREATH, 1);
+        break;
         case Flash::NONE:
-            break;
+        break;
         default:
             set(CHARGING_LED BRIGHTNESS, brightness);
-            break;
+        break;
     }
 }
 
