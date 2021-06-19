@@ -14,17 +14,17 @@
 // limitations under the License.
 //
 
-motorola_sdm632_init_library_static {
-    name: "libinit_sdm632",
+motorola_surfna_init_library_static {
+    name: "libinit_msm8937",
     recovery_available: true,
     srcs: [
-        "init_sdm632.cpp",
+        "init_msm8937.cpp",
         "DeviceLibinit.cpp"
     ],
     include_dirs: [
         "system/core/base/include",
         "system/core/init",
-        "device/motorola/sdm632-common"
+        "device/motorola/surfna"
     ],
     shared_libs: [
         "libbase",

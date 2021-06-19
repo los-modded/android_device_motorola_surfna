@@ -1,6 +1,6 @@
 bootstrap_go_package {
-    name: "soong-motorola-sdm632-plugins",
-    pkgPath: "device/motorola/sdm632-common",
+    name: "soong-motorola-surfna-plugins",
+    pkgPath: "device/motorola/surfna-common",
     deps: [
         "blueprint",
         "blueprint-pathtools",

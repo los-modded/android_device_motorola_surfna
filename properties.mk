@@ -1,5 +1,5 @@
 #
-# props for sdm632
+# props for yessir
 #
 
 # Audio
@@ -47,6 +47,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     use.voice.path.for.pcm.voip=false
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.calfile0=/vendor/etc/acdbdata/na/Bluetooth_cal.acdb \
+    persist.vendor.audio.calfile1=/vendor/etc/acdbdata/na/General_cal.acdb \
+    persist.vendor.audio.calfile2=/vendor/etc/acdbdata/na/Global_cal.acdb \
+    persist.vendor.audio.calfile3=/vendor/etc/acdbdata/na/Handset_cal.acdb \
+    persist.vendor.audio.calfile4=/vendor/etc/acdbdata/na/Hdmi_cal.acdb \
+    persist.vendor.audio.calfile5=/vendor/etc/acdbdata/na/Headset_cal.acdb \
+    persist.vendor.audio.calfile6=/vendor/etc/acdbdata/na/Speaker_cal.acdb
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
@@ -82,6 +92,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=320 \
+    sys.use_fifo_ui=1
 
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
