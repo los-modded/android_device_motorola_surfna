@@ -194,6 +194,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     fstab.qcom \
+    fstab.qcom.zramwb \
     ueventd.qcom.rc
 
 # IPACM
