@@ -41,7 +41,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRIVATE_BUILD_DESC="yessir release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210305.007/7124944:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys
 
 # LOS-Modded
 TARGET_MOTOCAM3_SUPPORTED := false

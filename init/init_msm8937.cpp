@@ -126,7 +126,7 @@ void check_device()
         heaptargetutilization = "0.6";
         heapminfree = "8m";
         heapmaxfree = "16m";
-    } else {
+    } else if (sys.totalram > 3072ull * 1024 * 1024) {
         // from - phone-xhdpi-2048-dalvik-heap.mk
         heapstartsize = "8m";
         heapgrowthlimit = "192m";
